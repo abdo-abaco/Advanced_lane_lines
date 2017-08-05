@@ -40,9 +40,15 @@ for fname in images:
 #plt.imshow(img)
 #plt.show()
 
+
 def cal_undistort(img, objpoints, imgpoints):
     img_size = (img.shape[1], img.shape[0])
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img_size,None,None)
+    # Save the camera calibration result for later use (we won't worry about rvecs / tvecs)
+    dist_pickle = {}
+    dist_pickle["mtx"] = mtx
+    dist_pickle["dist"] = dist
+    pickle.dump( dist_pickle, open( "calibration.p", "wb" ) )
     dst = cv2.undistort(img, mtx, dist, None, mtx)
     undist = np.copy(dst)  # Delete this line
     return undist
