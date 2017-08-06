@@ -1,7 +1,7 @@
 **Advanced Lane Finding Computer Vision Project**
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-**The series of steps are done on this project in order to acheive the goal of detecting and highlighting vehical traffic lanes:
+**The series of steps are done on this project in order to acheive the goal of detecting and highlighting vehical traffic lanes:**
 
 1) Camera Calibration - Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
 * Given a set of chessboard images we compute the camera calibration matrix and distortion coefficients.
