@@ -6,9 +6,9 @@
 **The series of steps are done on this project in order to acheive the goal of detecting and highlighting vehical traffic lanes:**
 
 
-### Camera Calibration
+### Pre-step: Camera Calibration
 
-#### Pre-step. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+#### Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
 * Given a set of chessboard images we use OpenCV to compute the camera calibration matrix and distortion coefficients.
@@ -23,10 +23,9 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 
 
+### Step:1 Undistorting Image
 
-### Camera Calibration
-
-#### Step:1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+####  Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 1) Undistorting the image 
 * Apply a distortion correction to raw images.
