@@ -27,18 +27,17 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ####  Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-1) Undistorting the image 
+Undistorting the image 
 * Apply a distortion correction to raw images.
 
-
-#### 1. Provide an example of a distortion-corrected image.
+Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][image2]
 
 
-
-#### Step:2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+### Step:2 Obtaining Binary Image extracting lane lines
+#### Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
  Apply color binary transforms and threshold to extract lane lines
 * Use color transforms, gradients, etc., to create a thresholded binary image.
@@ -53,10 +52,8 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 
 
-
-#### Step:3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
-
-
+### Step:3 Performing perspective transform on the lane.
+#### Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 Applying a perspective transform and effecting cropping outside areas to obtain a front view of the lanes.
 * Apply a perspective transform to rectify binary image ("birds-eye view").
@@ -92,8 +89,8 @@ I verified that my perspective transform was working as expected by drawing the 
 
 
 
-
-#### Step:4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+### Step:4 
+#### Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
@@ -104,14 +101,16 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 * Detect lane pixels and fit to find the lane boundary.
 
 
-#### Step:5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+### Step:5.
+#### Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
 I did this in lines # through # in my code in `my_other_file.py`
 
 * Determine the curvature of the lane and vehicle position with respect to center.
 
 
-#### Step:6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+### Step:6.
+#### Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
