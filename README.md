@@ -6,16 +6,12 @@
 **The series of steps are done on this project in order to acheive the goal of detecting and highlighting vehical traffic lanes:**
 
 
-
-1) ### Camera Calibration - Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
-* Given a set of chessboard images we use OpenCV to compute the camera calibration matrix and distortion coefficients.
-
-
-
-
 ### Camera Calibration
 
 #### Pre-step. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+
+Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
+* Given a set of chessboard images we use OpenCV to compute the camera calibration matrix and distortion coefficients.
 
 The code for this step is contained in the first code cell of the IPython notebook located in "./examples/example.ipynb" (or in lines # through # of the file called `some_file.py`).  
 
@@ -25,6 +21,12 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ![alt text][image1]
 
+
+
+
+### Camera Calibration
+
+#### Step:1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 1) Undistorting the image 
 * Apply a distortion correction to raw images.
@@ -36,10 +38,13 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 ![alt text][image2]
 
 
-2) Apply color binary transforms and threshold to extract lane lines
+
+#### Step:2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+
+ Apply color binary transforms and threshold to extract lane lines
 * Use color transforms, gradients, etc., to create a thresholded binary image.
 
-#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+
 
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
@@ -47,12 +52,16 @@ I used a combination of color and gradient thresholds to generate a binary image
 
 
 
-3) Applying a perspective transform and effecting cropping outside areas to obtain a front view of the lanes.
+
+
+
+#### Step:3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+
+
+
+Applying a perspective transform and effecting cropping outside areas to obtain a front view of the lanes.
 * Apply a perspective transform to rectify binary image ("birds-eye view").
 
-
-
-#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
@@ -85,7 +94,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 
 
-#### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
+#### Step:4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
@@ -96,14 +105,14 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 * Detect lane pixels and fit to find the lane boundary.
 
 
-#### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### Step:5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
 I did this in lines # through # in my code in `my_other_file.py`
 
 * Determine the curvature of the lane and vehicle position with respect to center.
 
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+#### Step:6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
@@ -123,17 +132,13 @@ The images for camera calibration are stored in the file called `calibration.p`.
 
 
 
-### Pipeline (video)
-
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
+#### Video. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 Here's a [link to my video result](./project_video.mp4)
 
 ---
 
-### Discussion
-
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### HOW WAS IT. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
