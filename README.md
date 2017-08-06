@@ -139,6 +139,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 
 
 ---
+
 [//]: # (Image References)
 
 [image1]: ./examples/undistort_output.png "Undistorted"
@@ -148,4 +149,6 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
+
+
 ---
