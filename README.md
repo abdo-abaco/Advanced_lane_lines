@@ -42,7 +42,7 @@ With M computed cv2.warpPerspective(), on line #108, warps the image effectively
 
 ### Step:4 Obtaining a histogram from perspective transform
 #### The histogram is computed in line #121 to count the positive binary pixels with each bin a coloumn.
-The histogram identifies the column pixels where the lines are located. The location is used as a starting point in the bottom image where the next portion of the code draws the line going up.
+The histogram identifies the column pixels where the lines are located. The location is used as a starting point in the bottom of the image where the next portion of the code draws the line going up.
 ![alt text][image5]
 
 ### Step:5.Drawing the lines (taking curvature into account)
