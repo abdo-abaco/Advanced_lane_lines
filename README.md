@@ -48,10 +48,9 @@ The code for my perspective transform includes computing a perspective transform
 With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first frame and its warped counterpart to verify that the lines appear parallel in the warped image.
 ![alt text][image4]
 
-### Step:4 
-#### Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
-
-Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
+### Step:4 Obtaining a histogram from perspective transform
+#### The histogram is computed in line #121 to count the positive binary pixels with each bin a coloumn.
+The histogram identifies the bottom points of the lines as starting points (y=0) and the overall shape of the line resulting from the perspective transform. Interpolated pixels which cause a blurring effect are especially noticable on the upper portion of the image.
 
 ![alt text][image5]
 
@@ -62,6 +61,8 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 
 ### Step:5.
 #### Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+
+The histogram is used to compute the lines changing curvature in the y direction by windowing method. line #123 through line #191 
 
 I did this in lines # through # in my code in `my_other_file.py`
 
