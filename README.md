@@ -144,7 +144,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [//]: # (Image References)
 
 [image1]: ./calibration_wide/undistorted.png "Undistorted"
-[image2]: ./examples/Figure2.png "Road Transformed"
+[image2]: ./examples/Figure_2.png "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
