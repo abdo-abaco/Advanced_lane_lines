@@ -18,7 +18,7 @@
 
 A set of chessboard images is provided in the calibration_wide folder. We use OpenCV to compute the camera calibration matrix and distortion coefficients. First we use cv2.findChessboardCorners() to derive a set of image points to object points. We then use cv2.calibrateCamera() to find the distortion parameters.
 
-'calibrate.py' computes and saves the distortion parameters and also displays a test example:  
+'calibrate.py' computes and saves the distortion parameters in the file called `calibration.p`. The test example is shown below:
 ![alt text][image1]
 
 ### Step:1 Undistorting Image
@@ -66,40 +66,19 @@ After Inverse Transform:
 The inverse perspective transform matrix is computed (line #106) just like the perspective transform matrix except with reversing source and destination points on cv2.getPerspectiveTransform() call.
 ![alt text][image7]
 
-### Step:6.
-#### Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
-
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-
-
-
-
-
+### Step:6. Indentifying lane on the road
+#### The Inverse Perspective Transform from Step:5 is plotted back down onto the road such that the lane area is identified clearly.
+I implemented cv2.addWeighted() on line #216 to combine the road image with the masked image of the lane lines obtained from the inverse perspective transform. The result from the first frame is shown below:
 ![alt text][image8]
 
-* Warp the detected lane boundaries back onto the original image.
 
-* Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
-
-The images for camera calibration are stored in the file called `calibration.p`.  The images in `test_images` are for testing your pipeline on single frames.  If you want to extract more test images from the videos, you can simply use an image writing method like `cv2.imwrite()`, i.e., you can read the video in frame by frame as usual, and for frames you want to save for later you can write to an image file.  
-
-
-`ouput_images`
-`project_video.mp4` 
-
-
-
-
-#### Video. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
-
+#### Video. We provide a link to our final video output.  The pipeline performs reasonably well on the entire project video 
 Here's a [link to my video result](https://youtu.be/yNyQFfTKRMw)
 
 ---
 
-#### HOW WAS IT. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+#### Conclusion. Briefly discuss any problems / issues you faced in your implementation of this project.
+ 
 
 
 ---
