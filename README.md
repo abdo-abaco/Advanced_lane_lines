@@ -10,7 +10,7 @@
 
 #### Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
 
-A set of chessboard images is provided in the calibration_wide folder. We use OpenCV to compute the camera calibration matrix and distortion coefficients. First we use cv2.findChessboardCorners to derive a set of image points to object points. We then use cv2.calibrateCamera() to find the distortion parameters.
+A set of chessboard images is provided in the calibration_wide folder. We use OpenCV to compute the camera calibration matrix and distortion coefficients. First we use cv2.findChessboardCorners() to derive a set of image points to object points. We then use cv2.calibrateCamera() to find the distortion parameters.
 
 'calibrate.py' computes and saves the distortion parameters and also displays a test example:  
 
@@ -142,7 +142,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [//]: # (Image References)
 
 [image1]: ./calibration_wide/undistorted.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
+[image2]: ./examples/Figure2.png "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
