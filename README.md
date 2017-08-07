@@ -126,9 +126,11 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [image1]: ./calibration_wide/undistorted.png "Undistorted"
 [image2]: ./examples/Figure_2.png "Road Transformed"
 [image3]: ./examples/Figure_3.png "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image4]: ./examples/Figure_4.png "Warp Example"
+[image5]: ./examples/Figure_5.png "Fit Visual"
+[image6]: ./examples/Figure_6.png "Output"
+[image7]: ./examples/Figure_7.png "Output2"
+[image8]: ./examples/Figure_8.png "Output3"
 [video1]: ./project_video.mp4 "Video"
 
 
