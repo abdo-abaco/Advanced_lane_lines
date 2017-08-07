@@ -115,7 +115,7 @@ The images for camera calibration are stored in the file called `calibration.p`.
 
 #### Video. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](https://youtu.be/yNyQFfTKRMw)
 
 ---
 
@@ -136,7 +136,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [image6]: ./examples/Figure_6.png "Output"
 [image7]: ./examples/Figure_7.png "Output2"
 [image8]: ./examples/Figure_8.png "Output3"
-[video1]: https://youtu.be/yNyQFfTKRMw
+
 
 
 ---
