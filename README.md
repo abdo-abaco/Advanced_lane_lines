@@ -62,7 +62,8 @@ Here's a [link to my video result](https://youtu.be/yNyQFfTKRMw)
 
 ---
 
-#### Conclusion. Briefly discuss any problems / issues you faced in your implementation of this project.
+#### Conclusion.
+In the presence of shadows and varying road textures the ROI becomes wobbly but for the most part is able to track the road. A way to make this roboust is to have adaptive thresholding on the binary images so that the changing conditions are taken into account. Another way to make this robust is to have the source points also change in run-time to take into account a large variance in the changing perspective of the lane.
  
 
 
