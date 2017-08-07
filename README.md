@@ -21,15 +21,9 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 ### Step:1 Undistorting Image
 
-####  Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
+####  The camera matrix and distortion coefficients are now used on the first frame of the video.
 
-Undistorting the image 
-* Apply a distortion correction to raw images.
-
-Provide an example of a distortion-corrected image.
-
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-
+'advancedlanes.py' line 64 applies the distortion correction.
 
 ![alt text][image2]
 
