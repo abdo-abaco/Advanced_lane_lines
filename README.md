@@ -13,7 +13,6 @@
 A set of chessboard images is provided in the calibration_wide folder. We use OpenCV to compute the camera calibration matrix and distortion coefficients. First we use cv2.findChessboardCorners() to derive a set of image points to object points. We then use cv2.calibrateCamera() to find the distortion parameters.
 
 'calibrate.py' computes and saves the distortion parameters and also displays a test example:  
-
 ![alt text][image1]
 
 ### Step:1 Undistorting Image
