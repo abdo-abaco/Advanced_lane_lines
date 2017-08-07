@@ -85,14 +85,13 @@ Then I did some other stuff and fit my lane lines with a 2nd order polynomial ki
 I did this in lines # through # in my code in `my_other_file.py`
 
 * Determine the curvature of the lane and vehicle position with respect to center.
+![alt text][image6]
 
 
 ### Step:6.
 #### Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
-
-![alt text][image6]
 
 
 ![alt text][image7]
