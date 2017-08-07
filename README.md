@@ -95,6 +95,12 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 ![alt text][image6]
 
 
+![alt text][image7]
+
+
+
+![alt text][image8]
+
 * Warp the detected lane boundaries back onto the original image.
 
 * Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
