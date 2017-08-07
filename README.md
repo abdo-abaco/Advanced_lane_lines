@@ -7,6 +7,10 @@
 
 
 ### Pre-step: Camera Calibration
+### Step:1 Undistorting Image
+### Step:2 Obtaining Binary Image extracting lane lines
+### Step:3 Performing perspective transform on the lane
+
 
 #### Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
 
@@ -44,7 +48,6 @@ The code for my perspective transform includes computing a perspective transform
 | 1179, 696      | w-350, h        |
 
 With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first and its warped counterpart to verify that the lines appear parallel in the warped image.
-
 ![alt text][image4]
 
 ### Step:4 
