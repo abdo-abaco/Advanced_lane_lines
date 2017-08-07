@@ -58,8 +58,8 @@ The histogram identifies the bottom points of the lines as starting points (y=0)
 
 ### Step:5.Drawing the lines taken curvature into account.
 #### The histogram is used to compute the lines changing curvature in the y direction by windowing method as shown on lines #123 through #191. 
+The curvature of the lane is determined and drawn out before and after an inverse transform is applied.
 
-* The curvature of the lane is determined and drawn out before and after an inverse transform is applied.
 Before Transform:
 ![alt text][image6]
 
