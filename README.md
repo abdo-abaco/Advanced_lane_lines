@@ -20,7 +20,6 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 ####  The camera matrix and distortion coefficients are now used on the first frame of the video.
 
 'advancedlanes.py' line 64 applies the distortion correction.
-
 ![alt text][image2]
 
 ### Step:2 Obtaining Binary Image extracting lane lines
