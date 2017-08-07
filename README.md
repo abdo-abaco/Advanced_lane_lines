@@ -62,12 +62,9 @@ The curvature of the lane is determined and drawn out before and after an invers
 
 Before Transform:
 ![alt text][image6]
-
-The inverse perspective transform matrix is computed (line #106) just like the perspective transform matrix except with reversing source and destination points on cv2.getPerspectiveTransform() call.
-
 After Inverse Transform:
+The inverse perspective transform matrix is computed (line #106) just like the perspective transform matrix except with reversing source and destination points on cv2.getPerspectiveTransform() call.
 ![alt text][image7]
-
 
 ### Step:6.
 #### Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
