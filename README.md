@@ -136,7 +136,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 [image6]: ./examples/Figure_6.png "Output"
 [image7]: ./examples/Figure_7.png "Output2"
 [image8]: ./examples/Figure_8.png "Output3"
-[video1]: ./project_video.mp4 "Video"
+[video1]: https://youtu.be/yNyQFfTKRMw
 
 
 ---
