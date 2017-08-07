@@ -1,18 +1,12 @@
 **Advanced Lane Finding Computer Vision Project**
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-
-## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
-
 **The series of steps are done on this project in order to acheive the goal of detecting and highlighting vehical traffic lanes:**
-
-
 ### Pre-step: Camera Calibration
 ### Step:1 Undistorting Image
 ### Step:2 Obtaining Binary Image extracting lane lines
 ### Step:3 Performing perspective transform on the lane
 ### Step:4 Obtaining a histogram from perspective transform
 ### Step:5.Drawing the lines (taking curvature into account)
-
 
 #### Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
 A set of chessboard images is provided in the calibration_wide folder. We use OpenCV to compute the camera calibration matrix and distortion coefficients. First we use cv2.findChessboardCorners() to derive a set of image points to object points. We then use cv2.calibrateCamera() to find the distortion parameters.
@@ -32,6 +26,7 @@ lines #14 through #38 in `advancedlanes.py` shows the steps taken for this pipel
 ### Step:3 Performing perspective transform on the lane.
 #### We performed a perspective transform and provide the first frame as an example of a transformed image.
 The code for my perspective transform includes computing a perspective transform matrix, M, which appears in line #103 `advancedlanes.py`. cv2.getPerspectiveTransform() accepts the following source and destination points selected from the first frame as the region or interest (ROI):
+
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
 | 573, 456      | 250, 0        | 
