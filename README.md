@@ -19,17 +19,13 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 ####  The camera matrix and distortion coefficients are now used on the first frame of the video.
 
-'advancedlanes.py' line 79 applies the distortion correction.
+'advancedlanes.py' line #79 applies the distortion correction.
 ![alt text][image2]
 
 ### Step:2 Obtaining Binary Image extracting lane lines
-#### Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### We extract the lane lines by performing a color-space transform from RGB to HLS to obtain the L and S channels then applying a sobel filter, in the x direction, to the L channel, thresholding, and adding both channels.
 
- Apply color binary transforms and threshold to extract lane lines
-* Use color transforms, gradients, etc., to create a thresholded binary image.
-
-
-I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
+lines #14 through #38 in `advancedlanes.py` shows the steps taken for this pipeline.
 
 ![alt text][image3]
 
