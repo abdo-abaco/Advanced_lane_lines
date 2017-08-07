@@ -19,7 +19,7 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 ####  The camera matrix and distortion coefficients are now used on the first frame of the video.
 
-'advancedlanes.py' line #79 applies the distortion correction.
+`advancedlanes.py` line #79 applies the distortion correction.
 ![alt text][image2]
 
 ### Step:2 Obtaining Binary Image extracting lane lines
@@ -30,36 +30,20 @@ lines #14 through #38 in `advancedlanes.py` shows the steps taken for this pipel
 ![alt text][image3]
 
 ### Step:3 Performing perspective transform on the lane.
-#### Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### We performed a perspective transform and provide an the first frame as an example of a transformed image.
 
-Applying a perspective transform and effecting cropping outside areas to obtain a front view of the lanes.
-* Apply a perspective transform to rectify binary image ("birds-eye view").
+Applying a perspective transform effectlively crops the outside areas to obtain a front view of the lanes. The binary image's perspective transform now provides a "birds-eye view".
 
-The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
-
-```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
-dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
-```
-
-This resulted in the following source and destination points:
+The code for my perspective transform includes computing a perspective transform matrix, M, which appears in line #103 `advancedlanes.py`. cv2.getPerspectiveTransform() accepts the following source and destination points selected from the first frame as the region or interest (ROI):
 
 | Source        | Destination   | 
 |:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| 573, 456      | 250, 0        | 
+| 684, 460      | w-350, 0      |
+| 310, 691     | 200, h      |
+| 1179, 696      | w-350, h        |
 
-I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
+With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image4]
 
