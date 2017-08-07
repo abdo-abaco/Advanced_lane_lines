@@ -37,12 +37,12 @@ The code for my perspective transform includes computing a perspective transform
 | 310, 691     | 200, h      |
 | 1179, 696      | w-350, h        |
 
-With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first frame and its warped counterpart to verify that the lines appear parallel in the warped image.
+With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first frame and its warped counterpart to verify that the lines appear parallel in the warped image. Interpolated pixels which cause a blurring effect are especially noticable on the upper portion of the image.
 ![alt text][image4]
 
 ### Step:4 Obtaining a histogram from perspective transform
 #### The histogram is computed in line #121 to count the positive binary pixels with each bin a coloumn.
-The histogram identifies the bottom points of the lines as starting points (y=0) and the overall shape of the line resulting from the perspective transform. Interpolated pixels which cause a blurring effect are especially noticable on the upper portion of the image.
+The histogram identifies the column pixels where the lines are located. The location is used as a starting point in the bottom image where the next portion of the code draws the line going up.
 ![alt text][image5]
 
 ### Step:5.Drawing the lines (taking curvature into account)
