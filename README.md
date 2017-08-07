@@ -45,7 +45,7 @@ The code for my perspective transform includes computing a perspective transform
 | 310, 691     | 200, h      |
 | 1179, 696      | w-350, h        |
 
-With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first and its warped counterpart to verify that the lines appear parallel in the warped image.
+With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first frame and its warped counterpart to verify that the lines appear parallel in the warped image.
 ![alt text][image4]
 
 ### Step:4 
