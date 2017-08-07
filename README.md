@@ -10,6 +10,8 @@
 ### Step:1 Undistorting Image
 ### Step:2 Obtaining Binary Image extracting lane lines
 ### Step:3 Performing perspective transform on the lane
+### Step:4 Obtaining a histogram from perspective transform
+### Step:5.Drawing the lines (taking curvature into account)
 
 
 #### Computer Vision neccesitates an accurate representation of the physical environment which requires a camera calibration to correct for lens distortion due to the lenses curvature and to account we are not assuming the 'pinhole model'. Calibration parameters K1 K2 P1 P2 K3 will be stored and used for detection, the K factors used for tangential distortion which corrects for the tilt effect whereas the P factors are used to undistort radial distortion which accounts for the warped effect.
@@ -51,23 +53,20 @@ With M computed cv2.warpPerspective(), on line #108, warps the image effectively
 ### Step:4 Obtaining a histogram from perspective transform
 #### The histogram is computed in line #121 to count the positive binary pixels with each bin a coloumn.
 The histogram identifies the bottom points of the lines as starting points (y=0) and the overall shape of the line resulting from the perspective transform. Interpolated pixels which cause a blurring effect are especially noticable on the upper portion of the image.
-
 ![alt text][image5]
 
 
-5) Obtain histogram of pixels in the x-direction to detect the two lines.
-* Detect lane pixels and fit to find the lane boundary.
+### Step:5.Drawing the lines taken curvature into account.
+#### The histogram is used to compute the lines changing curvature in the y direction by windowing method as shown on lines #123 through #191. 
 
-
-### Step:5.
-#### Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
-
-The histogram is used to compute the lines changing curvature in the y direction by windowing method. line #123 through line #191 
-
-I did this in lines # through # in my code in `my_other_file.py`
-
-* Determine the curvature of the lane and vehicle position with respect to center.
+* The curvature of the lane is determined and drawn out before and after an inverse transform is applied.
+Before Transform:
 ![alt text][image6]
+
+The inverse perspective transform matrix is computed (line #106) just like the perspective transform matrix except with reversing source and destination points on cv2.getPerspectiveTransform() call.
+
+After Inverse Transform:
+![alt text][image7]
 
 
 ### Step:6.
@@ -76,7 +75,7 @@ I did this in lines # through # in my code in `my_other_file.py`
 I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
 
 
-![alt text][image7]
+
 
 
 
