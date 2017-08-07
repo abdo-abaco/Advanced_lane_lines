@@ -45,7 +45,7 @@ With M computed cv2.warpPerspective(), on line #108, warps the image effectively
 The histogram identifies the column pixels where the lines are located. The location is used as a starting point in the bottom of the image where the next portion of the code draws the line going up.
 ![alt text][image5]
 
-### Step:5.Drawing the lines (taking curvature into account)
+### Step:5 Drawing the lines (taking curvature into account)
 #### The histogram is used to compute the lines changing curvature in the y direction by windowing method as shown on lines #123 through #191. 
 The curvature of the lane is determined and drawn out before and after an inverse transform is applied.
 Before Transform:
