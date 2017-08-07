@@ -34,9 +34,7 @@ lines #14 through #38 in `advancedlanes.py` shows the steps taken for this pipel
 ![alt text][image3]
 
 ### Step:3 Performing perspective transform on the lane.
-#### We performed a perspective transform and provide an the first frame as an example of a transformed image.
-
-Applying a perspective transform effectlively crops the outside areas to obtain a front view of the lanes. The binary image's perspective transform now provides a "birds-eye view".
+#### We performed a perspective transform and provide the first frame as an example of a transformed image.
 
 The code for my perspective transform includes computing a perspective transform matrix, M, which appears in line #103 `advancedlanes.py`. cv2.getPerspectiveTransform() accepts the following source and destination points selected from the first frame as the region or interest (ROI):
 
@@ -47,7 +45,7 @@ The code for my perspective transform includes computing a perspective transform
 | 310, 691     | 200, h      |
 | 1179, 696      | w-350, h        |
 
-With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first and its warped counterpart to verify that the lines appear parallel in the warped image.
+With M computed cv2.warpPerspective(), on line #108, warps the image effectively cropping out areas far from the ROI and interpolating the pixels in between. The binary image's perspective transform now provides a "birds-eye view". I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto the first and its warped counterpart to verify that the lines appear parallel in the warped image.
 ![alt text][image4]
 
 ### Step:4 
