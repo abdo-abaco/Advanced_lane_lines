@@ -14,10 +14,7 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 'calibrate.py' computes and saves the distortion parameters and also displays a test example:  
 
-
 ![alt text][image1]
-
-
 
 ### Step:1 Undistorting Image
 
@@ -27,7 +24,6 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 ![alt text][image2]
 
-
 ### Step:2 Obtaining Binary Image extracting lane lines
 #### Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
@@ -35,21 +31,15 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 * Use color transforms, gradients, etc., to create a thresholded binary image.
 
 
-
 I used a combination of color and gradient thresholds to generate a binary image (thresholding steps at lines # through # in `another_file.py`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
 ![alt text][image3]
-
-
-
-
 
 ### Step:3 Performing perspective transform on the lane.
 #### Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 Applying a perspective transform and effecting cropping outside areas to obtain a front view of the lanes.
 * Apply a perspective transform to rectify binary image ("birds-eye view").
-
 
 The code for my perspective transform includes a function called `warper()`, which appears in lines 1 through 8 in the file `example.py` (output_images/examples/example.py) (or, for example, in the 3rd code cell of the IPython notebook).  The `warper()` function takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
@@ -78,8 +68,6 @@ This resulted in the following source and destination points:
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image4]
-
-
 
 ### Step:4 
 #### Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
