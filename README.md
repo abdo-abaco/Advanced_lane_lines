@@ -19,7 +19,7 @@ A set of chessboard images is provided in the calibration_wide folder. We use Op
 
 ####  The camera matrix and distortion coefficients are now used on the first frame of the video.
 
-'advancedlanes.py' line 64 applies the distortion correction.
+'advancedlanes.py' line 79 applies the distortion correction.
 ![alt text][image2]
 
 ### Step:2 Obtaining Binary Image extracting lane lines
@@ -125,7 +125,7 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 
 [image1]: ./calibration_wide/undistorted.png "Undistorted"
 [image2]: ./examples/Figure_2.png "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
+[image3]: ./examples/Figure_3.png "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/color_fit_lines.jpg "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
