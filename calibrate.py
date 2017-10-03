@@ -6,7 +6,7 @@ import matplotlib.image as mpimg
 import glob
 
 
-images = glob.glob('calibration_wide/GOPR00*.jpg')
+images = glob.glob('camera_cal/calib*.jpg')
 
 # Read in an image
 #img = cv2.imread('calibration_wide/GOPR0032.jpg')
@@ -14,11 +14,11 @@ images = glob.glob('calibration_wide/GOPR00*.jpg')
 objpoints = []
 imgpoints = []
 
-objp = np.zeros((6*8, 3), np.float32)
-objp[:,:2] = np.mgrid[0:8,0:6].T.reshape(-1,2)
+objp = np.zeros((6*9, 3), np.float32)
+objp[:,:2] = np.mgrid[0:9,0:6].T.reshape(-1,2)
 
 # prepare object points
-nx = 8#TODO: enter the number of inside corners in x
+nx = 9#TODO: enter the number of inside corners in x
 ny = 6#TODO: enter the number of inside corners in y
 
 
@@ -55,7 +55,7 @@ def cal_undistort(img, objpoints, imgpoints):
 
 
 #test distortion
-img = cv2.imread('calibration_wide/test_image.jpg')
+img = cv2.imread('camera_cal/test.jpg')
 
 undistorted = cal_undistort(img, objpoints, imgpoints)
 
